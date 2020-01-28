@@ -1,3 +1,2 @@
 #!/bin/bash
-cd /root
-touch f1 f2 f3
+touch file1 file2 file3
