@@ -1,26 +1,24 @@
+
 pipeline {
   agent any
-  stages {
-  stage('Stage 1') {
-      steps {
-        script {
-          echo 'Stage 1'
+   tools {
+   maven "mvn"
+   jdk   "jdk"
+   }
+
+   stages {
+        stage ('git clone and build') {
+        steps {
+        sh 'echo "script started for bulinding code"'
+        sh 'mvn clean'
+        sh 'mvn install'
         }
-      }
-    }
-  stage('Stage 2') {
-      steps {
-        script {
-          echo 'Stage 2'
         }
-      }
-    }
-    stage('Stage 2') {
-      steps {
-        script {
-          echo 'Stage 2'
+
+        stage ('bulid docker image') {
+                steps {
+                sh 'echo "buliding docker image"'
+                }
         }
-      }
-    }
-  }
+}
 }
