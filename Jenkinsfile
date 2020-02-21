@@ -24,7 +24,7 @@
                 sh 'docker run –-port 80:80 -d webserver:v1'
                 }
         }
-	stage ('check the your container website'){
+	stage ('check the your container website') {
 	steps {
 	  sh ' echo "check the besite using your public IP"'
 	  	}
