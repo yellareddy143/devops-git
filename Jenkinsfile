@@ -22,7 +22,7 @@ pipeline {
 	stage ('Running docker Container') {
                 steps {
                 sh 'echo "Running docker"'
-                sh 'docker run –dit –p 1234:80 webserver:v1'
+                sh 'docker run –d –p 1234:80 webserver:v1'
                 }
         }
 	stage ('check the your container website'){
