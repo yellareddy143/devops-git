@@ -10,14 +10,13 @@ pipeline {
         stage ('git clone and build') {
         steps {
         sh 'echo "script started for bulinding code"'
-        sh 'mvn clean'
-        sh 'mvn install'
         }
         }
 
         stage ('bulid docker image') {
                 steps {
                 sh 'echo "buliding docker image"'
+		sh 'docker build /test/ -t webserver:v1'
                 }
         }
 }
