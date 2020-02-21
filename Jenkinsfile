@@ -9,7 +9,7 @@
         stage ('git clone and build') {
         steps {
         sh 'echo "script started for bulinding code"'
-        }
+        	}
         }
 
         stage ('bulid docker image') {
@@ -27,7 +27,7 @@
 	stage ('check the your container website'){
 	steps {
 	  sh ' echo "check the besite using your public IP"'
+	  	}
 	  }
-	  }
-}
+ }
 }
