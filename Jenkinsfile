@@ -15,7 +15,7 @@ pipeline {
     stage('Buliding docker image') {
       steps {
         sh 'echo "buliding docker image"'
-	sh 'docker bulid tesk-docker/ -t webserver:v1'
+	sh 'docker bulid -t webserver:v1 tesk-docker/'
       }
     }
     stage('Running Docker Image') {
