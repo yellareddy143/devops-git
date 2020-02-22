@@ -20,7 +20,7 @@ pipeline {
     }
     stage('Running Docker Image') {
       steps {
-        sh 'docker run -dit --port 80:80 -d mywebnew2'
+        sh 'docker run -dit -p 80:80 -d mywebhttpd:v4'
       }
     }
     stage('Running Web server'){
