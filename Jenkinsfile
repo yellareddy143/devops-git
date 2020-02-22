@@ -2,7 +2,7 @@ pipeline {
   agent any
   stages {
     stage('build') {
-      stepes {
+      step`s {
       	sh 'echo "first pipe"'
       }
     }
