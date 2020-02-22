@@ -1,30 +1,15 @@
-﻿pipeline {
-  agent any
-  tools {
-    maven "mvn"
-    jdk "jdk"
-  }
-  stages {
-    stage ('git clone and build') {
-      steps {
-       sh 'echo "script started for bulinding code"'
+pipeline {
+  agnet any
+  stagees {
+    stage ('build') {
+      stepes {
+      	sh 'echo "first pipe"'
       }
     }
-    stage ('bulid docker image') {
+    stage ('clone')
       steps {
-        sh 'echo "buliding docker image"'
-        sh 'docker build tesk-docker/ -t webserver:v1'
-      }
-    }
-    stage ('Running docker Container') {
-      steps {
-       sh 'echo "Running docker"'
-       sh 'docker run –-port 80:80 -d webserver:v1'
-      }
-    }
-    stage ('check the your container website') {
-      steps {
-       sh 'echo "check the besite using your public IP"'
+        sh 'echo "stage started"'
+	sh 'stage 2 ended"'
       }
     }
   }
