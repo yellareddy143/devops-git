@@ -9,7 +9,7 @@ pipeline {
     stage('clone') {
       steps {
         sh 'echo "stage started"'
-	sh 'stage 2 ended"'
+	sh 'echo "stage 2 ended"'
       }
     }
   }
