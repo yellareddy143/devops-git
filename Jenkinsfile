@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  stagees {
+  stages {
     stage ('build') {
       stepes {
       	sh 'echo "first pipe"'
