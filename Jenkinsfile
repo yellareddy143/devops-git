@@ -15,12 +15,12 @@ pipeline {
     stage('Buliding docker image') {
       steps {
         sh 'echo "buliding docker image"'
-	sh 'docker build tesk-docker/ -t mywebnew2 --no-cache'
+	sh 'docker build tesk-docker/ -t mywebhttpd:v4 --no-cache'
       }
     }
     stage('Running Docker Image') {
       steps {
-        sh 'docker run --port 80:80 -d mywebnew2'
+        sh 'docker run -dit --port 80:80 -d mywebnew2'
       }
     }
     stage('Running Web server'){
