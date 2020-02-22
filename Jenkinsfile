@@ -2,7 +2,7 @@
   agent any
   tools {
     maven "mvn"
-    jdk   "jdk"
+    jdk "jdk"
   }
   stages {
     stage ('git clone and build') {
