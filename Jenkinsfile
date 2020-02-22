@@ -6,7 +6,7 @@ pipeline {
       	sh 'echo "first pipe"'
       }
     }
-    stage ('clone')
+    stage ('clone'){
       steps {
         sh 'echo "stage started"'
 	sh 'stage 2 ended"'
