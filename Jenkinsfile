@@ -15,17 +15,19 @@ pipeline {
     stage('Buliding docker image') {
       steps {
         sh 'echo "buliding docker image"'
-	sh 'docker build tesk-docker/ -t mywebhttpd:v4 --no-cache'
+	sh 'docker build tesk-docker/ -t mytest:latest '
       }
     }
-    stage('Running Docker Image') {
+    stage('PUSH TO ECR') {
       steps {
-        sh 'docker run -dit -p 80:80 -d mywebhttpd:v4'
+        sh '$(aws ecr get-login --no-include-email --region ap-south-1)'
+	sh 'docker tag devops-repo:latest 514224277819.dkr.ecr.ap-south-1.amazonaws.com/mytest:latest'
+	sh 'docker push 514224277819.dkr.ecr.ap-south-1.amazonaws.com/mytest:latest'
       }
     }
-    stage('Running Web server'){
+    stage('Check Your AWS ECR'){
       steps {
-        sh 'echo "check your webpage"'
+        sh 'echo "DOCKER IMAGE PUSHED SUCCESSFULLY"'
       }
     }
   }

@@ -1,5 +1,4 @@
-FROM centos:latest
-RUN yum -y install httpd
-COPY index.html /var/www/html/
-RUN  httpd --reload 
-EXPOSE 80
+FROM ubuntu
+MAINTAINER vyr.sucess2021@gmail.com
+WORKDIR /newtmp
+CMD pwd`
