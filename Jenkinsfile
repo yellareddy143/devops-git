@@ -22,7 +22,7 @@ pipeline {
       steps {
         sh '$(aws ecr get-login --no-include-email --region ap-south-1)'
 	sh 'docker tag devops-repo:latest 514224277819.dkr.ecr.ap-south-1.amazonaws.com/devops-repo:latest'
-	sh 'docker push 514224277819.dkr.ecr.ap-south-1.amazonaws.com/mytest:latest'
+	sh 'docker push 514224277819.dkr.ecr.ap-south-1.amazonaws.com/devops-repo:latest'
       }
     }
     stage('Check Your AWS ECR'){
