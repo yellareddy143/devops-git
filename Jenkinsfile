@@ -15,7 +15,7 @@ pipeline {
     stage('Buliding docker image') {
       steps {
         sh 'echo "buliding docker image"'
-	sh 'docker build tesk-docker/ -t mytest:latest '
+	sh 'docker build tesk-docker/ -t devops-repo:latest '
       }
     }
     stage('PUSH TO ECR') {
